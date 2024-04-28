@@ -8,6 +8,9 @@ $breakpoints: (
   "mobile": (
     max-width: 575.5px,
   ),
+  "mobile-360": (
+    max-width: 359.5px,
+  ),
 ) !default;
 
 @mixin respond-to($breakpoint) {

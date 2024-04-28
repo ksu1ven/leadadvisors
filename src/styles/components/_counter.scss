@@ -17,6 +17,9 @@
   @include mixins.respond-to(mobile) {
     width: 86.11%;
   }
+  @include mixins.respond-to(mobile-360) {
+    width: 100%;
+  }
 
   &__number {
     font-family: "Poppins SemiBold", sans-serif;

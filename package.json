@@ -13,7 +13,6 @@
     "build": "tsc && vite build",
     "lint": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky",
     "start-server": "node api/index.js -p 3001 --cors",
     "server": "nodemon api/index.js -p 3001 --cors",
     "client": "npm start --prefix client",

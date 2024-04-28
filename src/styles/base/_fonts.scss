@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Poppins Bold";
+  src: local("Poppins Bold"), local("Poppins-Bold"),
+    url("@assets/fonts/Poppins-Bold.woff2") format("woff2"),
+    url("@assets/fonts/Poppins-Bold.woff") format("woff"),
+    url("@assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins Regular";
+  src: local("Poppins Regular"), local("Poppins-Regular"),
+    url("@assets/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("@assets/fonts/Poppins-Regular.woff") format("woff"),
+    url("@assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+// оставляю только ttf, т.к. в остальных форматах у меня квадратное двоеточие, и у вас локально возможно тоже
+@font-face {
+  font-family: "Poppins SemiBold";
+  src: url("@assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto Regular"), local("Roboto-Regular"),
+    url("@assets/fonts/Roboto-Regular.woff2") format("woff2"),
+    url("@assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("@assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SFProDisplay Regular";
+  src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"),
+    url("@assets/fonts/SFProDisplay-Regular.woff2") format("woff2"),
+    url("@assets/fonts/SFProDisplay-Regular.woff") format("woff"),
+    url("@assets/fonts/SFProDisplay-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "SFProDisplay Medium";
+  src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
+    url("@assets/fonts/SFProDisplay-Medium.woff2") format("woff2"),
+    url("@assets/fonts/SFProDisplay-Medium.woff") format("woff"),
+    url("@assets/fonts/SFProDisplay-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "SFProDisplay SemiBold";
+  src: local("SF Pro Display Semibold"), local("SFProDisplay-Semibold"),
+    url("@assets/fonts/SFProDisplay-Semibold.woff2") format("woff2"),
+    url("@assets/fonts/SFProDisplay-Semibold.woff") format("woff"),
+    url("@assets/fonts/SFProDisplay-Semibold.ttf") format("ttf");
+}

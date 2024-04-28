@@ -1,0 +1,69 @@
+$breakpoints: (
+  "desktop": (
+    max-width: 1919.5px,
+  ),
+  "tablet": (
+    max-width: 1024.5px,
+  ),
+  "mobile": (
+    max-width: 575.5px,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin flex($dir, $jus, $ali) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+  gap: var(--gap, 1rem);
+}
+
+@mixin fill() {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin title() {
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 104%;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-primary);
+  opacity: 39%;
+}
+
+@mixin text($color, $size) {
+  font-family: "Poppins Regular", sans-serif;
+  font-size: $size;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: center;
+  color: $color;
+}
+
+@mixin hover-device {
+  @media screen and (hover: hover) {
+    @content;
+  }
+}
+
+@mixin mobile-device {
+  @media screen and (hover: none) {
+    @content;
+  }
+}

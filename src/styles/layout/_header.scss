@@ -1,0 +1,37 @@
+@use "../utils/mixins";
+
+.header {
+  @include mixins.flex(null, center, center);
+  padding: 6.875rem 0 0;
+
+  .logo {
+    width: 11.875rem;
+
+    @include mixins.respond-to(mobile) {
+      width: 8rem;
+    }
+  }
+  @include mixins.respond-to(desktop) {
+    padding: 2rem 0 0;
+  }
+
+  @include mixins.respond-to(tablet) {
+    padding: 6.5625rem 0 0;
+  }
+
+  @include mixins.respond-to(mobile) {
+    padding: 5rem 0 0;
+  }
+
+  &__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

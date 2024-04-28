@@ -1,0 +1,71 @@
+@use "../utils/mixins";
+
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  margin: auto;
+}
+
+.grid-100vh {
+  display: grid;
+  grid-template-rows: calc(100vh - 10vw) 10vw;
+
+  @include mixins.respond-to("desktop") {
+    grid-template-rows: calc(100vh - 8rem) 8rem;
+  }
+
+  @include mixins.respond-to("tablet") {
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  @include mixins.fill();
+  background-color: var(--color-primary-blur);
+}
+
+.popup {
+  position: absolute;
+  width: 20rem;
+  height: 23.125rem;
+  border-radius: 2px;
+
+  margin: auto;
+  left: calc(50vw - 10rem);
+  top: calc(50dvh - 11.5625rem);
+  border: 1px solid var(--color-stroke);
+  background-color: var(--color-white);
+
+  &_relative {
+    padding: 6rem 1rem 0 1.5rem;
+    position: relative;
+  }
+
+  &__title {
+    font-family: "Poppins Bold", "sans-serif";
+    font-size: 2.25rem;
+    line-height: 104%;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    text-align: center;
+
+    &_error {
+      color: var(--color-accent);
+    }
+  }
+
+  &__message {
+    margin: 1.875rem 0;
+    @include mixins.text(var(--color-black-80), 1rem);
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.49rem;
+    right: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

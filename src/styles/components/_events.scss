@@ -1,0 +1,355 @@
+@use "../utils/mixins";
+
+.events {
+  padding: 6.875rem 0 6.25rem;
+
+  @include mixins.respond-to(tablet) {
+    padding: 2.875rem 0 3rem;
+  }
+
+  @include mixins.respond-to(mobile) {
+    padding: 3.6875rem 0 3.25rem;
+  }
+}
+
+.accordion {
+  width: fit-content;
+  margin: 2.5rem auto 0;
+  @include mixins.flex(null, center, center);
+  gap: 0.25rem;
+  overflow: hidden;
+
+  @include mixins.respond-to(desktop) {
+    width: fit-content;
+  }
+
+  @include mixins.respond-to(tablet) {
+    width: 89.585%;
+    margin: 1.25rem auto 0;
+    @include mixins.flex(column, center, center);
+    gap: 0.25rem;
+  }
+
+  @include mixins.respond-to(mobile) {
+    width: 88.89%;
+  }
+}
+
+.event {
+  height: 42.6875rem;
+  border-bottom: 2px solid var(--color-accent-s);
+  font-family: "SFProDisplay Medium", sans-serif;
+  line-height: 100%;
+  color: var(--color-white);
+  @include mixins.flex(null, flex-start, center);
+  gap: 2px;
+  overflow: hidden;
+  position: relative;
+
+  @include mixins.respond-to(tablet) {
+    @include mixins.flex(column-reverse, flex-start, stretch);
+    gap: 2px;
+    width: 100%;
+    height: 5.3125rem;
+    border-bottom: 2px solid var(--color-accent);
+  }
+  @include mixins.respond-to(mobile) {
+    height: 4rem;
+  }
+
+  .event-main {
+    position: relative;
+    width: 66.5rem;
+    height: 100%;
+
+    @include mixins.respond-to(desktop) {
+      width: 40rem;
+    }
+
+    @include mixins.respond-to(tablet) {
+      width: 100%;
+      height: 28.75rem;
+    }
+    @include mixins.respond-to(mobile) {
+      height: 23.5;
+    }
+
+    &__img-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 61.1875rem;
+      height: 100%;
+
+      @include mixins.respond-to(desktop) {
+        width: 40rem;
+      }
+
+      @include mixins.respond-to(tablet) {
+        width: 100%;
+        height: 28.75rem;
+      }
+      @include mixins.respond-to(mobile) {
+        height: 13.625rem;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right 77%;
+
+      @include mixins.respond-to(mobile) {
+        object-position: top;
+      }
+    }
+  }
+
+  &_active {
+    width: 66.5rem;
+    z-index: 1;
+
+    @include mixins.respond-to(desktop) {
+      width: 40rem;
+    }
+
+    @include mixins.respond-to(tablet) {
+      width: 100%;
+      height: 34.1rem;
+    }
+    @include mixins.respond-to(mobile) {
+      height: 27.625rem;
+    }
+  }
+
+  &_hidden {
+    width: 5.3125rem;
+    cursor: pointer;
+
+    @include mixins.respond-to(desktop) {
+      width: 4rem;
+    }
+
+    @include mixins.respond-to(tablet) {
+      width: 100%;
+      height: 5.3125rem;
+    }
+    @include mixins.respond-to(mobile) {
+      height: 4rem;
+    }
+  }
+}
+
+.event-preview {
+  width: 5.3125rem;
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+
+  @include mixins.respond-to(desktop) {
+    width: 4rem;
+  }
+
+  @include mixins.respond-to(tablet) {
+    width: 100%;
+    bottom: 0;
+    height: 5.3125rem;
+  }
+  @include mixins.respond-to(mobile) {
+    height: 4rem;
+  }
+
+  .blur {
+    position: absolute;
+    @include mixins.fill();
+    z-index: 4;
+    background: linear-gradient(to bottom, transparent, var(--color-primary));
+    transition: 1s linear;
+
+    &_no-gradient {
+      position: relative;
+      background: var(--color-primary);
+      width: 5.3125rem;
+      height: 100%;
+
+      @include mixins.respond-to(tablet) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+
+    &_2,
+    &_3,
+    &_4,
+    &_5,
+    &_6,
+    &_7 {
+      top: auto;
+      bottom: 0;
+      height: 52.375rem;
+    }
+
+    &_3 {
+      object-position: 55% center;
+    }
+
+    &_4 {
+      object-position: 92% center;
+    }
+
+    &_5 {
+      object-position: 81% center;
+    }
+
+    &_6 {
+      object-position: 30% center;
+    }
+
+    &_7 {
+      object-position: 25% center;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    width: 100%;
+    bottom: 1.25rem;
+    z-index: 3;
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-align: center;
+
+    @include mixins.respond-to(tablet) {
+      font-size: 2rem;
+      text-align: left;
+      left: 2.1875rem;
+      bottom: 1.7rem;
+    }
+    @include mixins.respond-to(mobile) {
+      left: 1.25rem;
+      bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    bottom: 6.25rem;
+    font-size: 2rem;
+    font-weight: 600;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    @include mixins.flex(null, center, center);
+
+    @include mixins.respond-to(tablet) {
+      writing-mode: initial;
+      transform: none;
+      left: 6.625rem;
+      bottom: 2.125rem;
+      font-size: 1.5rem;
+      text-align: left;
+      display: block;
+    }
+
+    @include mixins.respond-to(mobile) {
+      @include mixins.flex(null, flex-start, center);
+      width: 13.75rem;
+      height: 100%;
+      left: 3.875rem;
+      bottom: 0;
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.event-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 22.75rem;
+  height: 100%;
+  @include mixins.flex(column, flex-end, flex-start);
+  gap: 0;
+  font-family: "SFProDisplay Semibold", sans-serif;
+  font-weight: 600;
+  padding: 0 0 3.125rem 2.625rem;
+  background-color: var(--color-blur);
+  backdrop-filter: blur(40px);
+
+  @include mixins.respond-to(tablet) {
+    width: 100%;
+    padding: 0 0 2.5rem 2.5rem;
+    height: 12rem;
+    top: auto;
+    bottom: 0;
+  }
+
+  @include mixins.respond-to(mobile) {
+    padding: 0 0 1.5rem 1.5rem;
+    height: 9.875rem;
+  }
+
+  &__num {
+    position: absolute;
+    top: 0;
+    letter-spacing: -0.7125rem;
+    left: -35.3%;
+    color: var(--color-white-4);
+    font-size: 23.75rem;
+
+    @include mixins.respond-to(tablet) {
+      letter-spacing: 0;
+      font-size: 9.5rem;
+      top: -5%;
+      left: 79%;
+    }
+    @include mixins.respond-to(mobile) {
+      font-size: 5rem;
+      left: 76%;
+      top: 0.875rem;
+    }
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    line-height: 120%;
+
+    @include mixins.respond-to(tablet) {
+      font-size: 1.125rem;
+    }
+    @include mixins.respond-to(mobile) {
+      font-size: 1rem;
+    }
+  }
+
+  &__date {
+    font-family: "SFProDisplay Regular", sans-serif;
+    color: var(--color-white-80);
+    margin: 0.75rem 0 1.5625rem;
+
+    @include mixins.respond-to(tablet) {
+      margin: 0.5rem 0 1.875rem;
+      font-size: 1rem;
+    }
+    @include mixins.respond-to(mobile) {
+      margin: 0.5rem 0 1.375rem;
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../utils/mixins";
+
+.button {
+  border-radius: 2.5rem;
+  @include mixins.text(var(--color-white), 1.125rem);
+  background-color: var(--color-primary-s);
+  border: none;
+  cursor: pointer;
+
+  &_link {
+    @include mixins.flex(null, space-between, center);
+    width: 15rem;
+    padding: 1.032rem 1.5rem 1.032rem 1.75rem;
+    margin: 0.75rem auto 0;
+
+    @include mixins.respond-to(tablet) {
+      margin: 0.9375rem auto 0;
+    }
+  }
+
+  &_popup {
+    display: block;
+    margin: auto;
+    padding: 1rem 4.685rem;
+  }
+}
+
+.button-link_white-border {
+  padding: 1.25rem 3rem;
+  color: var(--color-white-80);
+  font-size: 1.125rem;
+  line-height: 120%;
+  letter-spacing: 0.03375rem;
+  border: 2px solid var(--color-white-80);
+  border-left: 7.71px solid var(--color-white);
+  cursor: pointer;
+
+  @include mixins.respond-to(tablet) {
+    padding: 0.78125rem 1.5rem;
+    font-size: 1rem;
+    border-left: 6px solid var(--color-white);
+  }
+}

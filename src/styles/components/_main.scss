@@ -1,0 +1,40 @@
+@use "../utils/mixins";
+
+.main {
+  margin: auto;
+  padding: 5.75rem 0 9.75rem;
+
+  @include mixins.respond-to(desktop) {
+    padding: 2rem 0 1.5rem;
+  }
+
+  @include mixins.respond-to(tablet) {
+    padding: 10.52rem 0 9.625rem;
+  }
+  @include mixins.respond-to(mobile) {
+    padding: 4.1343rem 0 7.5rem;
+  }
+}
+
+.construction {
+  width: max-content;
+  margin: auto;
+
+  @include mixins.respond-to(mobile) {
+    width: 88.88%;
+  }
+
+  &__p {
+    width: 50.5%;
+    margin: 0.5rem auto 0;
+
+    @include mixins.respond-to(tablet) {
+      width: 68.25%;
+      margin: 1.25rem auto 0;
+    }
+    @include mixins.respond-to(mobile) {
+      width: 100%;
+      margin: 1rem auto 0;
+    }
+  }
+}

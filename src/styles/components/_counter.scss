@@ -1,0 +1,94 @@
+@use "../utils/mixins";
+
+.counter {
+  margin: 2rem auto 4.375rem;
+  width: 30.7%;
+
+  @include mixins.respond-to(desktop) {
+    width: 50%;
+    margin: 1rem auto;
+  }
+
+  @include mixins.respond-to(tablet) {
+    width: fit-content;
+    margin: 2.5rem auto;
+  }
+
+  @include mixins.respond-to(mobile) {
+    width: 86.11%;
+  }
+
+  &__number {
+    font-family: "Poppins SemiBold", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 100%;
+    color: var(--color-primary);
+    text-align: center;
+
+    @include mixins.respond-to(desktop) {
+      font-size: clamp(2.25rem, 3.5vw, 4.5rem);
+    }
+
+    @include mixins.respond-to(tablet) {
+      width: 100%;
+      font-size: 2.25rem;
+      word-spacing: 0.7rem;
+    }
+
+    @include mixins.respond-to(mobile) {
+      word-spacing: 0.3rem;
+    }
+
+    span {
+      display: inline-block;
+      min-width: 5.95rem;
+      text-align: left;
+
+      @include mixins.respond-to(tablet) {
+        min-width: 2.9375rem;
+      }
+    }
+  }
+
+  &__units {
+    @include mixins.flex(null, center, center);
+    gap: 1.25rem;
+
+    @include mixins.respond-to(tablet) {
+      gap: 2.125rem;
+    }
+
+    @include mixins.respond-to(mobile) {
+      gap: 1.125rem;
+    }
+  }
+
+  &__unit {
+    width: 8.25rem;
+    height: 3.3825rem;
+    margin: 0;
+
+    display: grid;
+    place-content: center;
+
+    font-family: "Poppins Regular", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--color-white);
+
+    background-image: url("@assets/images/leaf.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include mixins.respond-to(tablet) {
+      width: 4rem;
+      height: 2.5rem;
+      font-size: 0.75rem;
+
+      background-image: url("@assets/images/leaf-tablet.svg");
+    }
+  }
+}

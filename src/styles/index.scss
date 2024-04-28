@@ -1,0 +1,44 @@
+@use "./base/reset";
+@use "./base/fonts";
+@use "./base/form";
+@use "./base/buttons";
+
+@use "./layout/header";
+@use "./layout/footer";
+@use "./layout/layout";
+
+@use "./components/counter";
+@use "./components/main";
+@use "./components/events";
+
+@use "./utils/mixins";
+@use "./utils/variables";
+@use "./utils/animations";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+  @include mixins.title();
+
+  @include mixins.respond-to(desktop) {
+    font-size: clamp(2.25rem, 3.5vw, 4.5rem);
+  }
+
+  @include mixins.respond-to(tablet) {
+    font-size: 2.25rem;
+  }
+}
+
+p {
+  @include mixins.text(var(--color-black-80), 1.125rem);
+
+  @include mixins.respond-to(tablet) {
+    font-size: 1rem;
+  }
+}

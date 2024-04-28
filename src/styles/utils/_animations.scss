@@ -1,0 +1,268 @@
+@use "../utils/mixins";
+
+.appear {
+  animation-fill-mode: forwards;
+  animation: 0.5s ease-in-out appear;
+
+  &_construction {
+    animation-delay: 0.2s;
+  }
+
+  &_counter {
+    animation-delay: 0.35s;
+  }
+
+  &_vectors {
+    animation-delay: 0.35s;
+  }
+
+  &_go-to-event {
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: auto;
+  }
+}
+
+.translate-left {
+  animation: 1s linear translateLeft;
+  animation-fill-mode: forwards;
+  overflow: visible;
+  z-index: 4;
+
+  @include mixins.respond-to(desktop) {
+    animation: 1s linear translateLeftDesktop;
+    animation-fill-mode: forwards;
+  }
+
+  @include mixins.respond-to(tablet) {
+    animation: none;
+
+    .event-main {
+      animation: 1s linear translateTop;
+      animation-fill-mode: forwards;
+      overflow: visible;
+    }
+
+    .event-content {
+      z-index: 10;
+      transform: translateY(28.75rem);
+    }
+  }
+
+  @include mixins.respond-to(mobile) {
+    .event-main {
+      animation: 1s linear translateTopMobile;
+      animation-fill-mode: forwards;
+    }
+
+    .event-content {
+      transform: translateY(23.5rem);
+    }
+  }
+
+  &_no-visible {
+    animation: 1s linear translateLeft;
+    animation-fill-mode: forwards;
+    overflow: visible;
+    z-index: 5;
+    overflow: hidden;
+
+    @include mixins.respond-to(desktop) {
+      animation: 1s linear translateLeftDesktop;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.respond-to(tablet) {
+      animation: 1s linear translateTop;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.respond-to(mobile) {
+      animation: 1s linear translateTopMobile;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.translate-right {
+  overflow: visible;
+  z-index: 4;
+  animation-fill-mode: forwards;
+
+  @include mixins.respond-to(tablet) {
+    transform: none;
+    transform-origin: top;
+    animation: 1s linear translateBottom;
+    animation-fill-mode: forwards;
+
+    .event-preview,
+    .event-content {
+      transform: translateY(28.75rem);
+    }
+  }
+
+  @include mixins.respond-to(mobile) {
+    animation: 1s linear translateBottomMobile;
+    animation-fill-mode: forwards;
+
+    .event-preview,
+    .event-content {
+      transform: translateY(23.5rem);
+    }
+  }
+
+  .event-main {
+    transform-origin: left;
+    animation: 1s linear translateRight;
+    animation-fill-mode: forwards;
+
+    @include mixins.respond-to(desktop) {
+      animation: 1s linear translateRightDesktop;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.respond-to(tablet) {
+      animation: none;
+    }
+  }
+
+  &_no-visible {
+    animation: 1s linear translateRightNotVisible;
+    animation-fill-mode: forwards;
+    overflow: visible;
+    z-index: 5;
+    overflow: hidden;
+
+    @include mixins.respond-to(desktop) {
+      animation: 1s linear translateRightNotVisibleDesktop;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.respond-to(tablet) {
+      animation: 1s linear translateBottomNotVisible;
+      animation-fill-mode: forwards;
+    }
+
+    @include mixins.respond-to(mobile) {
+      animation: 1s linear translateBottomNotVisibleMobile;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes translateTop {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-28.75rem);
+  }
+}
+
+@keyframes translateTopMobile {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(-23.5rem);
+  }
+}
+
+@keyframes translateBottom {
+  0% {
+    transform: translateY(-28.75rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translateBottomMobile {
+  0% {
+    transform: translateY(-23.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translateBottomNotVisible {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(28.75rem);
+  }
+}
+
+@keyframes translateBottomNotVisibleMobile {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(23.5rem);
+  }
+}
+
+@keyframes translateLeft {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(-61.1875rem);
+  }
+}
+
+@keyframes translateLeftDesktop {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: translateX(-36rem);
+  }
+}
+
+@keyframes translateRight {
+  0% {
+    transform: translateX(-61.1875rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translateRightDesktop {
+  0% {
+    transform: translateX(-36rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translateRightNotVisible {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(61.1875rem);
+  }
+}
+
+@keyframes translateRightNotVisibleDesktop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(36rem);
+  }
+}

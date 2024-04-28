@@ -21,6 +21,7 @@
 
 .overlay {
   position: fixed;
+  z-index: 98;
   @include mixins.fill();
   background-color: var(--color-primary-blur);
 }
@@ -30,6 +31,7 @@
   width: 20rem;
   height: 23.125rem;
   border-radius: 2px;
+  z-index: 99;
 
   margin: auto;
   left: calc(50vw - 10rem);

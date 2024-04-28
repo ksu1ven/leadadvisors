@@ -51,6 +51,21 @@
 
     background-color: var(--color-accent);
     cursor: pointer;
+    transition: 0.5s;
+
+    @include mixins.hover-device {
+      &:hover {
+        background-color: var(--color-accent-s);
+        transform: scale(1.05);
+      }
+    }
+
+    @include mixins.mobile-device {
+      &:active {
+        background-color: var(--color-accent-s);
+        transform: scale(1.05);
+      }
+    }
 
     @include mixins.respond-to(mobile) {
       right: 23%;

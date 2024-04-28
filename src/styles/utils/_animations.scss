@@ -138,9 +138,8 @@
   &_no-visible {
     animation: 1s linear translateRightNotVisible;
     animation-fill-mode: forwards;
-    overflow: visible;
-    z-index: 5;
     overflow: hidden;
+    z-index: 5;
 
     @include mixins.respond-to(desktop) {
       animation: 1s linear translateRightNotVisibleDesktop;

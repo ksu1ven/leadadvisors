@@ -86,8 +86,8 @@ export const EmailForm = () => {
             style={
               emailValid ? {} : { border: "2px solid var(--color-accent)" }
             }
-            onChange={(e) => {
-              if (!e.target.value) resetValidationError();
+            onChange={() => {
+              resetValidationError();
             }}
             onBlur={(e) => checkValidationEmail(e.target.value)}
           />

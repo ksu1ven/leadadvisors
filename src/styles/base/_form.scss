@@ -91,6 +91,10 @@
 
     &:disabled {
       cursor: auto;
+      &:hover {
+        background-color: auto;
+        transform: none;
+      }
     }
   }
 }

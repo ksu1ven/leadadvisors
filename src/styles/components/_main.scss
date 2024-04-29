@@ -28,6 +28,10 @@
     width: 50.5%;
     margin: 0.5rem auto 0;
 
+    @include mixins.respond-to(desktop) {
+      width: 68.25%;
+    }
+
     @include mixins.respond-to(tablet) {
       width: 68.25%;
       margin: 1.25rem auto 0;

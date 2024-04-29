@@ -65,7 +65,7 @@
     }
   }
 
-  @include mixins.respond-to(tablet) {
+  @include mixins.respond-to(desktop) {
     padding: 0.78125rem 1.5rem;
     font-size: 1rem;
     border-left: 6px solid var(--color-white);

@@ -92,7 +92,7 @@
     &:disabled {
       cursor: auto;
       &:hover {
-        background-color: auto;
+        background-color: var(--color-accent);
         transform: none;
       }
     }

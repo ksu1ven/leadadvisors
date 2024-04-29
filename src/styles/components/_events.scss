@@ -322,7 +322,7 @@
     font-size: 23.75rem;
 
     @include mixins.respond-to(desktop) {
-      font-size: 9.5rem;
+      font-size: 14.5rem;
     }
 
     @include mixins.respond-to(tablet) {

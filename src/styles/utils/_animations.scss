@@ -2,22 +2,22 @@
 
 .appear {
   animation-fill-mode: forwards;
-  animation: 0.5s ease-in-out appear;
+  animation: 1s ease-in-out appear;
 
   &_construction {
-    animation-delay: 0.2s;
+    animation-delay: 0.5s;
   }
 
   &_counter {
-    animation-delay: 0.35s;
+    animation-delay: 0.8s;
   }
 
   &_vectors {
-    animation-delay: 0.35s;
+    animation-delay: 1s;
   }
 
   &_go-to-event {
-    animation-delay: 0.5s;
+    animation-delay: 1s;
   }
 }
 
@@ -33,13 +33,13 @@
 }
 
 .translate-left {
-  animation: 1s linear translateLeft;
+  animation: 0.5s linear translateLeft;
   animation-fill-mode: forwards;
   overflow: visible;
   z-index: 4;
 
   @include mixins.respond-to(desktop) {
-    animation: 1s linear translateLeftDesktop;
+    animation: 0.5s linear translateLeftDesktop;
     animation-fill-mode: forwards;
   }
 
@@ -47,7 +47,7 @@
     animation: none;
 
     .event-main {
-      animation: 1s linear translateTop;
+      animation: 0.5s linear translateTop;
       animation-fill-mode: forwards;
       overflow: visible;
     }
@@ -60,7 +60,7 @@
 
   @include mixins.respond-to(mobile) {
     .event-main {
-      animation: 1s linear translateTopMobile;
+      animation: 0.5s linear translateTopMobile;
       animation-fill-mode: forwards;
     }
 
@@ -70,24 +70,24 @@
   }
 
   &_no-visible {
-    animation: 1s linear translateLeft;
+    animation: 0.5s linear translateLeft;
     animation-fill-mode: forwards;
     overflow: visible;
     z-index: 5;
     overflow: hidden;
 
     @include mixins.respond-to(desktop) {
-      animation: 1s linear translateLeftDesktop;
+      animation: 0.5s linear translateLeftDesktop;
       animation-fill-mode: forwards;
     }
 
     @include mixins.respond-to(tablet) {
-      animation: 1s linear translateTop;
+      animation: 0.5s linear translateTop;
       animation-fill-mode: forwards;
     }
 
     @include mixins.respond-to(mobile) {
-      animation: 1s linear translateTopMobile;
+      animation: 0.5s linear translateTopMobile;
       animation-fill-mode: forwards;
     }
   }
@@ -101,7 +101,7 @@
   @include mixins.respond-to(tablet) {
     transform: none;
     transform-origin: top;
-    animation: 1s linear translateBottom;
+    animation: 0.5s linear translateBottom;
     animation-fill-mode: forwards;
 
     .event-preview,
@@ -111,7 +111,7 @@
   }
 
   @include mixins.respond-to(mobile) {
-    animation: 1s linear translateBottomMobile;
+    animation: 0.5s linear translateBottomMobile;
     animation-fill-mode: forwards;
 
     .event-preview,
@@ -122,11 +122,11 @@
 
   .event-main {
     transform-origin: left;
-    animation: 1s linear translateRight;
+    animation: 0.5s linear translateRight;
     animation-fill-mode: forwards;
 
     @include mixins.respond-to(desktop) {
-      animation: 1s linear translateRightDesktop;
+      animation: 0.5s linear translateRightDesktop;
       animation-fill-mode: forwards;
     }
 
@@ -136,23 +136,23 @@
   }
 
   &_no-visible {
-    animation: 1s linear translateRightNotVisible;
+    animation: 0.5s linear translateRightNotVisible;
     animation-fill-mode: forwards;
     overflow: hidden;
     z-index: 5;
 
     @include mixins.respond-to(desktop) {
-      animation: 1s linear translateRightNotVisibleDesktop;
+      animation: 0.5s linear translateRightNotVisibleDesktop;
       animation-fill-mode: forwards;
     }
 
     @include mixins.respond-to(tablet) {
-      animation: 1s linear translateBottomNotVisible;
+      animation: 0.5s linear translateBottomNotVisible;
       animation-fill-mode: forwards;
     }
 
     @include mixins.respond-to(mobile) {
-      animation: 1s linear translateBottomNotVisibleMobile;
+      animation: 0.5s linear translateBottomNotVisibleMobile;
       animation-fill-mode: forwards;
     }
   }

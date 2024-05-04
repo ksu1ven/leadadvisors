@@ -12,10 +12,13 @@ export const Main = () => {
         </p>
       </div>
       <Counter />
-      <p>Check our event page when you wait:</p>
+      <p className="appear appear_go-to-event">
+        Check our event page when you wait:
+      </p>
       <Link
         to="https://odyssey4165.vercel.app/"
         className="button button_link appear appear_go-to-event"
+        target="_blank"
       >
         <span>Go to the event</span>
         <img src={arrorwRight} alt="follow link" />

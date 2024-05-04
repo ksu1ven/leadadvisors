@@ -167,7 +167,7 @@
     @include mixins.fill();
     z-index: 4;
     background: linear-gradient(to bottom, transparent, var(--color-primary));
-    transition: 1s linear;
+    transition: 0.5s linear;
 
     &_no-gradient {
       position: relative;

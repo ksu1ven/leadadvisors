@@ -135,6 +135,7 @@ export const Events = () => {
                 <p className="event-content__date">{item.date}</p>
                 <Link
                   to="https://svarka-tyt-minsk.vercel.app/"
+                  target="_blank"
                   className="button-link_white-border"
                 >
                   More information

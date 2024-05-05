@@ -94,7 +94,7 @@ export const Events = () => {
             el.classList.remove(`${transitionClass}_no-visible`)
           );
         accordionRef.current?.children[ind].classList.remove(transitionClass);
-      }, 1050);
+      }, 550);
     }
   };
 

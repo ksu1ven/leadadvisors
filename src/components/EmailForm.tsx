@@ -62,8 +62,6 @@ export const EmailForm = () => {
           process.env.NODE_ENV === "development" ? "http://localhost:3001" : ""
         }/api/user`
       );
-      xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-      xhr.setRequestHeader("Access-Control-Allow-Methods", "POST");
       xhr.send(emailRef.current.value);
     } else {
       setEmailValid({ state: false, message: "This is a required field" });

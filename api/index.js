@@ -8,9 +8,7 @@ http
       for await (const chunk of request) {
         email += chunk;
       }
-      response.setHeader("Access-Control-Allow-Headers", "*");
       response.setHeader("Access-Control-Allow-Origin", "*");
-      response.setHeader("Access-Control-Allow-Methods", "POST");
       response.end(email);
     }
   })

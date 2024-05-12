@@ -10,14 +10,20 @@ export const EmailForm = () => {
     state: "",
     message: "",
   });
+  let timerId = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const checkValidationEmail = (value: string) => {
+    if (!emailValid.state) resetValidationError();
+    if (timerId.current) clearTimeout(timerId.current);
+
     if (value) {
-      const isMatchRegexp = !!value.match(regexpEmail);
-      setEmailValid({
-        state: isMatchRegexp,
-        message: isMatchRegexp ? "" : "Incorrect Email",
-      });
+      timerId.current = setTimeout(() => {
+        const isMatchRegexp = !!value.match(regexpEmail);
+        setEmailValid({
+          state: isMatchRegexp,
+          message: isMatchRegexp ? "" : "Incorrect Email",
+        });
+      }, 1000);
     }
   };
 
@@ -84,10 +90,7 @@ export const EmailForm = () => {
             style={
               emailValid ? {} : { border: "2px solid var(--color-accent)" }
             }
-            onChange={() => {
-              resetValidationError();
-            }}
-            onBlur={(e) => checkValidationEmail(e.target.value)}
+            onChange={(e) => checkValidationEmail(e.target.value)}
           />
           <p className="email-form__error">{emailValid.message}</p>
           <button
